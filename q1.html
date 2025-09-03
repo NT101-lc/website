@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body{
+        font-family: Arial;
+      }
+      .input{
+        padding: 5px 8px 5px 3px;
+      }
+      .button{
+        padding: 5px;
+        border : none;
+        color: white;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <input class = "input" placeholder = "Enter your celsius degree">
+    <button class ="button">Convert!</button>
+    <div class = "result"></div>
+  </body>
+  <script>
+    function conversion(degree){
+      let f = (degree * 9/5) + 32;
+      return f;
+    }
+    let res = 0;
+    const text = document.querySelector('.input');
+    document.querySelector('.button')
+      .addEventListener('click', () => {
+        res = Number(text.value);
+        console.log(conversion(res));
+        document.querySelector('.result').innerHTML = `C to F = ${conversion(res)}`
+      });
+    
+  </script>
+</html>
